@@ -22,7 +22,8 @@ char	*ft_strrev(char *str)
 
 int    main()
 {
-        char str[50] = "doof";
+        char str[50];
+        str = "doof";
         printf("The given string is =%s\n", str);
          printf("After reversing string is =%s", ft_strrev(str));
         return 0;
