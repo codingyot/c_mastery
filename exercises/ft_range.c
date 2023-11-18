@@ -1,58 +1,32 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oallan <oallan@student.42abudhabi.ae>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/10 14:35:54 by oallan            #+#    #+#             */
+/*   Updated: 2023/11/10 14:36:04 by oallan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-int PandN(int y)
+int	*ft_range(int min, int max)
 {
-    if (y < 0)
-        return (-y);
-    return (y);
-}
-int     *ft_range(int start, int end)
-{
-    int i;
-    int a;
-    int *w;
-    int *x;
+	int		*array;
+	unsigned int	i;
 
-    a = PandN(end - start) + 1;
-    w = (int *)malloc(sizeof(int) * a);
-    if (!w)
-        return (0);
-    if (a == 1)
-        x[0] = start;
-    i = 0;
-    x = w;
-    if (start < end)
-    {
-        while(a > i)
-        {
-            x[i] = start + i;
-            i++;
-        }
-    }
-    else if (start > end)
-    {
-        while(a > i)
-        {
-            x[i] = start - i;
-            i++;
-        }
-    }
-    return (x);
-}
-int main()
-{
-    int i = 0;
-    int start = -100;
-    int end = 2;
-    int *x;
-
-    int a = PandN(end - start) + 1;
-    x = ft_range(start, end);
-    while (a > i)
-    {
-        printf("%i, ", x[i]);
-        i++;
-    }
-    free(x);
+	i = 0;
+	if (min >= max)
+		return (NULL);
+	array = (int *)malloc(sizeof(int) * (max - min));
+	while (min < max)
+	{
+		array[i] = min;
+		min++;
+		i++;
+	}
+	return (array);
 }
