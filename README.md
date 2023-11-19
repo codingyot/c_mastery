@@ -1,1 +1,2 @@
-# c_mastery
+In the exercises detailed in this repository are solutions to some of the questions that could appear in piscine examinations. Make sure to practice them according because they could helpout alot in your exams success, please don't ignore even the ones that look simple but rather give it a try and test yourself untill you fill comfortable with them then move to another one step by step.
+And once you have gone through a couple of these questions and fullfilled the required practice , you shall be amazed how confident you shall be in passing your piscine exammination.

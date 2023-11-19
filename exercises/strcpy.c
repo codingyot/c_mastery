@@ -1,28 +1,22 @@
+#include <unistd.h>
 #include <stdio.h>
 
-char    *ft_strcpy(char *s1, char *s2)
+char *ft_strcpy(char *dest, char *src)
 {
     int i;
 
     i = 0;
-    while(s2[i] != '\0')
+    while(src[i] != '\0')
     {
-        s1[i] = s2[i];
+        dest[i] = src[i];
         i++;
     }
-    s1[i] = '\0';
-    return (s1);
+    dest[i] = '\0';
+    return(dest);
 }
 int main()
 {
-    char f[] = "shjiof";
-    char g[] = "iouj8jg";
-
-    printf("%s", ft_strcpy(f , g));
+    char x[] = "hello";
+    char y[] = "hey";
+    printf("%s", ft_strcpy(x, y));
 }
-// int	main()
-// {
-// 	    char src[] = "source copies it's values to destination";
-//       char dest[] = "destination receives values from source";
-// 	printf("%s", ft_strcpy(dest, src));
-// }

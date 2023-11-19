@@ -1,25 +1,28 @@
 #include <unistd.h>
 
-int first(char *str)
+void first_word(char *str)
 {
-    int i;
+    int i = 0;
 
-    i = 0;
-    while (str[i] == ' ' || str[i] =='\t')
+    // Skip leading tabs and spaces
+    while (str[i] == '\t' || str[i] == ' ')
+    {
         i++;
-    while(str[i] != '\0'  && str[i] != ' ' && str[i] !='\t')
-        {
-            write(1, &str[i], 1);
-            i++;
-        }
-    write(1, "\n", 1);
+    }
+    // Print characters until a space or tab is encountered
+    while (str[i] != '\0' && str[i] != '\t' && str[i] != ' ')
+    {
+        write(1, &str[i], 1); 
+        i++;
+    }
 }
-int main(int ac , char **av)
+
+int main(int ac, char **av)
 {
     if (ac == 2)
     {
-        first(av[1]);
-    }else
-        write(1, "\n", 1);
+        first_word(av[1]);
+    }
+    write(1, "\n", 1);
     return 0;
 }

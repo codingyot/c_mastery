@@ -1,37 +1,32 @@
-#include <stdio.h>
 #include <unistd.h>
+#include <stdio.h>
 
-int len(char *str)
+char *ft_strrev(char *s)
 {
     int i;
+    int a;
+    char swap;
 
     i = 0;
-    while(str[i] != '\0')
+    while(s[i] != '\0')
     {
         i++;
     }
-    return (i);
-}
-char    *ft_strrev(char *str)
-{
-    int i;
-    int r;
-    char tmp;
-
+    a = i - 1;
     i = 0;
-    r = len(str) -1;
-    while(r > i)
-    {
-        tmp = str[i];
-        str[i] = str[r];
-        str[r] = tmp;
-        i++;
-        r--;
-    }
-    return (str);
+   while (a > i)
+{
+    swap = s[i];
+    s[i] = s[a];
+    s[a] = swap;
+    i++;
+    a--;
 }
+    return (s);
+}
+
 int main()
 {
-    char x[] = "nallA";
+    char x[] = " kcab si nallA";
     printf("%s", ft_strrev(x));
 }

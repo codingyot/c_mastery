@@ -1,47 +1,49 @@
 #include <unistd.h>
+#include <stdio.h>
 
-int check_if_one(char *str, char c, int index)
+int checker(char *str, char o, int y)
 {
     int i;
 
     i = 0;
-    while(index > i)
-    {
-        if (str[i] == c)
-            return (0);
-        i++;
-    }
+    while(y > i)
+        {  
+            if (str[i] == o)
+                return (0);
+            i++;
+        }
     return (1);
 }
 
-void ft_union(char *s1, char *s2)
+void ft_union(char *st, char *sc)
 {
     int i;
     int len;
 
     i = 0;
-    while(s1[i])
+    while (st[i] != '\0')
     {
-        if (check_if_one(s1, s1[i], i) == 1)
-            write(1, &s1[i], 1);
+        if (checker(st, st[i], i) == 1)
+            write(1, &st[i], 1);
         i++;
     }
     len = i;
-    i = 0;
-    while(s2[i])
+    i = 0; 
+    while (sc[i] != '\0')
     {
-        if (check_if_one(s2, s2[i], i) == 1)
+        if (checker(sc, sc[i], i) == 1)
         {
-            if(check_if_one(s1, s2[i], len) == 1)
-                write(1, &s2[i], 1);
+            if (checker(st, sc[i], len) == 1)
+                write(1, &sc[i], 1);
         }
-         i++;
+        i++;
     }
 }
+
 int main(int ac, char **av)
 {
     if (ac == 3)
         ft_union(av[1], av[2]);
-    write(1, "\n", 1);
-return(0);
+    write(1,"\n", 1);
+    return (0);
 }
